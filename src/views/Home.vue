@@ -7,24 +7,16 @@
 
 <script>
 export default {
-  name: 'home',
-  watch: {
-  },
-  computed: {
-  },
-  mounted () {
-    
-  },
-  data () {
+  name: "home",
+  watch: {},
+  computed: {},
+  mounted() {},
+  data() {
     return {
-      hello : 'world'
-    }
+      hello: "world"
+    };
   },
-  methods: {
-    
-  },
-  components: {
-    
-  }
-}
+  methods: {},
+  components: {}
+};
 </script>

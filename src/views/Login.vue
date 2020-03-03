@@ -6,7 +6,8 @@
       </div>
       <div class="login-form">
         <!-- Start :: Login Form -->
-        <form action="/smarthome/v2/main">
+        <v-form></v-form>
+        <form action>
           <div>
             <v-row>
               <v-col>
@@ -66,7 +67,15 @@
                 ></v-text-field>
               </v-col>
             </v-row>
-            <v-btn block color="submit" active-class="on" type="submit" class="btn-login">로그인</v-btn>
+            <v-btn
+              block
+              color="submit"
+              active-class="on"
+              type="submit"
+              class="btn-login"
+              @click="submit"
+              to="/Home"
+            >로그인</v-btn>
           </div>
         </form>
         <!-- End :: Login Form -->
@@ -96,6 +105,7 @@ export default {
     };
   },
   methods: {
+    submit: function() {},
     textFieldChangeLabel: function(target, status) {
       var targetInput = event.target;
       var targetParent = event.target.parentNode;
