@@ -1,0 +1,6 @@
+{
+	"px-to-rem.px-per-rem": 32,
+	"search.exclude": {
+		"**/node_modules": false
+	}
+}

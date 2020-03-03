@@ -1,57 +1,23 @@
 <template>
-  <div id="app">
-    <h1>App.vue</h1>
-    <br />
-    <router-link to="/member">Member TEST</router-link>
-    <br />
-    <router-link to="/test">Test 화면보기</router-link>
-    <router-view />
+  <v-app>
+    <!-- Start :: 테스트용 퀵 메뉴 -->
+    <QuickTestMenu></QuickTestMenu>
 
-    <v-row align="center">
-      <v-col class="text-center" cols="12" sm="4">
-        <div class="my-2">
-          <v-btn small>Normal</v-btn>
-        </div>
-        <div class="my-2">
-          <v-btn small color="primary">Primary</v-btn>
-        </div>
-        <div class="my-2">
-          <v-btn small color="error">Error</v-btn>
-        </div>
-        <div class="my-2">
-          <v-btn small disabled>Disabled</v-btn>
-        </div>
-      </v-col>
-      <v-col class="text-center" cols="12" sm="4">
-        <div class="my-2">
-          <v-btn>Normal</v-btn>
-        </div>
-        <div class="my-2">
-          <v-btn color="primary">Primary</v-btn>
-        </div>
-        <div class="my-2">
-          <v-btn color="error">Error</v-btn>
-        </div>
-        <div class="my-2">
-          <v-btn disabled>Disabled</v-btn>
-        </div>
-      </v-col>
-      <v-col class="text-center" cols="12" sm="4">
-        <div class="my-2">
-          <v-btn large>Normal</v-btn>
-        </div>
-        <div class="my-2">
-          <v-btn large color="primary">Primary</v-btn>
-        </div>
-        <div class="my-2">
-          <v-btn large color="error">Error</v-btn>
-        </div>
-        <div class="my-2">
-          <v-btn large disabled>Disabled</v-btn>
-        </div>
-      </v-col>
-    </v-row>
-  </div>
+    <!-- End ::테스트용 퀵 메뉴 -->
+
+    <router-view class="wrapper" />
+  </v-app>
 </template>
+<script>
+import QuickTestMenu from "./views/QuickTestMenu";
+export default {
+  components: {
+    QuickTestMenu
+  },
+  mounted() {
+    console.log("Test메뉴 로드 완료");
+  }
+};
+</script>
 <style>
 </style>
