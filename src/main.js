@@ -9,20 +9,18 @@ import _ from "lodash";
 import moment from "moment";
 
 // Style Load
+import './assets/style/nanumsquare.css'
 import './assets/style/reset.min.css'
 import './assets/style/cvnet.scss'
-// Custom Script
-import cvnet from './assets/scripts/cvnet'
 
 Vue.prototype._ = _;
 Vue.prototype.moment = moment;
 
 Vue.config.productionTip = true;
 new Vue({
-  cvnet,
   vuetify,
   router,
   store,
   el: '#app',
-  render: h => h(App)
+  render: h => h(App),
 })
