@@ -15,16 +15,14 @@
           <div class="form-wrap">
             <v-row>
               <v-col>
-                <div class="form-group">
-                  <v-text-field
-                    class="input-form"
-                    placeholder="아이디를 입력해주세요."
-                    type="text"
-                    label="동"
-                    color="pointColor1"
-                    loader-height="1"
-                  ></v-text-field>
-                </div>
+                <v-text-field
+                  class="input-form"
+                  placeholder="동을 입력해주세요."
+                  type="text"
+                  label="동"
+                  color="pointColor1"
+                  loader-height="1"
+                ></v-text-field>
               </v-col>
             </v-row>
             <v-row>
@@ -65,7 +63,6 @@
         </v-form>
       </div>
     </div>
-    <div class="common-page-bottom"></div>
   </div>
 </template>
 <script>

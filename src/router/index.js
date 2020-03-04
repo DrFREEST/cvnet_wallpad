@@ -7,7 +7,9 @@ import Member from '../views/Member.vue'
 import Login from '../views/Login.vue'//로그인 - 메인
 import JoinStep1 from '../views/login/JoinStep1.vue'//로그인 - 세대정보입력
 import JoinStep2 from '../views/login/JoinStep2.vue'//로그인 - 회원정보입력
-import CommonLayout from '../views/login/CommonLayout.vue'//로그인 기본 레이아웃 페이지
+import UseTerms from '../views/login/UseTerms.vue'//로그인 - 서비스 이용 약관
+import CertificationSuccess from '../views/login/CertificationSuccess.vue'//로그인 - 인증성공
+import CertificationFail from '../views/login/CertificationFail.vue'//로그인 - 인증실패
 
 Vue.use(Router);
 
@@ -41,6 +43,18 @@ const router = new Router({
       path: '/login/joinStep2',
       name: 'joinStep2',
       component: JoinStep2,
+    }, {//로그인 - 서비스이용약관
+      path: '/login/useTerms',
+      name: 'useTerms',
+      component: UseTerms,
+    }, {//로그인 - 서비스이용약관
+      path: '/login/certificationSuccess',
+      name: 'certificationSuccess',
+      component: CertificationSuccess,
+    }, {//로그인 - 서비스이용약관
+      path: '/login/certificationFail',
+      name: 'certificationFail',
+      component: CertificationFail,
     }
   ]
 })
