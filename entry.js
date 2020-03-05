@@ -1,6 +1,6 @@
 const express = require('express')
 const https = require('https');
-const http = require('http');
+//const http = require('http');
 const cors = require('cors')
 const fs = require('fs')
 const path = require('path')
@@ -11,6 +11,10 @@ const renderer = require('vue-server-renderer').createBundleRenderer(bundle)
 const index = fs.readFileSync(path.join(__dirname, './index.html'), 'utf8')
 
 const app = express()
+
+/*******************************************************************************
+ * SERVER Setting
+ ******************************************************************************/
 const credential = {
   ca: fs.readFileSync('./security/2020/chainca.crt'),        
   cert: fs.readFileSync('./security/2020/STAR.uasis.com.crt'),
@@ -26,27 +30,52 @@ app.use(bodyParser.urlencoded({
 }));
 
 app.set('port', port);
-//const server = https.createServer(credential, app);
-const server = http.createServer(app);
+const server = https.createServer(credential, app);
+//const server = http.createServer(app);
 server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
 
-app.use('/smarthome/v2/dist', express.static('./dist'))
+/*******************************************************************************
+ * router
+ ******************************************************************************/
+var dist = express.static(path.join(__dirname, './dist'))
+//var message = express.static(path.join(__dirname, './src/public/message'))
+var javascript = express.static(path.join(__dirname, './src/public/javascript'))
+var member = require('./src/router/api/member')
+//var houseinfo = require('./src/router/api/houseinfo')
+//var service = require('./src/router/api/service')
+
+
+/*******************************************************************************
+ * endPoint
+ ******************************************************************************/
+app.use('/smarthome/v2/dist', dist)
+//app.use('/message', message)
+app.use('/javascript', javascript)
+app.use('/api/member', member)
+//app.use('/api/houseinfo', houseinfo)
+//app.use('/api/service', service)
+
+
 app.get('/smarthome/v2/*', (req, res, next) => {
-  console.log('/smarthome/v2 호출 ')
+  console.log('/smarthome/v2')
   renderer.renderToString({},
     (err, html) => {
       if (err) {
         console.log(err)
         return res.sendStatus(500)
       }
+      //console.log("html : "+html)
       res.send(index.replace('<div id=app></div>', html))
     }
   )
 })
 
 
+/*******************************************************************************
+ * function
+ ******************************************************************************/
 function normalizePort(val) {
   var port = parseInt(val, 10);
 

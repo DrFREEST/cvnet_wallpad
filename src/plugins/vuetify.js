@@ -13,6 +13,7 @@ const opts = {
 		light: true,
 		themes: {
 			light: {
+				white: '#ffffff',
 				primary: '#1976D2',
 				secondary: '#424242',
 				accent: '#82B1FF',

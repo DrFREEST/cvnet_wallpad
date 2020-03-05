@@ -11,7 +11,7 @@
     </div>
     <div class="common-page-bottom">
       <v-btn depressed outlined to="/login">기존 인증정보로 로그인하기</v-btn>
-      <v-btn depressed outlined to="/login/joinStep1">재인증 받기</v-btn>
+      <v-btn depressed outlined to="/member/joinStep1">재인증 받기</v-btn>
     </div>
   </div>
 </template>

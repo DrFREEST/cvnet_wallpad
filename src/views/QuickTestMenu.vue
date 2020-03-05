@@ -19,23 +19,27 @@ export default {
   data: () => ({
     items: [
       { title: "로그인 메인", routingPage: "/login" },
-      { title: "로그인 - 세대 정보 입력", routingPage: "/login/joinStep1" },
-      { title: "로그인 - 로그인 정보 입력", routingPage: "/login/joinStep2" },
-      { title: "로그인 - 서비스 이용 약관", routingPage: "/login/UseTerms" },
+      { title: "로그인 - 세대 정보 입력", routingPage: "/member/joinStep1" },
+      { title: "로그인 - 로그인 정보 입력", routingPage: "/member/joinStep2" },
+      { title: "로그인 - 서비스 이용 약관", routingPage: "/member/UseTerms" },
       {
         title: "로그인 - 인증 성공",
-        routingPage: "/login/CertificationSuccess"
+        routingPage: "/member/CertificationSuccess"
       },
       {
         title: "로그인 - 인증 실패",
-        routingPage: "/login/CertificationFail"
+        routingPage: "/member/CertificationFail"
       },
       {
         title: "로그인 - 아이디 또는 비밀번호 찾기",
-        routingPage: "/login/FindIdPass"
+        routingPage: "/member/FindIdPass"
       },
-      { title: "로그인 - 아이디 찾기", routingPage: "/login/FindId" },
-      { title: "로그인 - 비밀번호 찾기", routingPage: "/login/FindPass" }
+      { title: "로그인 - 아이디 찾기", routingPage: "/member/FindId" },
+      {
+        title: "로그인 - 아이디 찾기 결과",
+        routingPage: "/member/FindIdResult"
+      },
+      { title: "로그인 - 비밀번호 찾기", routingPage: "/member/FindPass" }
     ]
   })
 };

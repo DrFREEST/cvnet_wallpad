@@ -19,7 +19,7 @@
       </div>
     </div>
     <div class="common-page-bottom">
-      <v-btn depressed outlined to="/login/JoinStep2" class="btn-agree">동의하고 계속하기</v-btn>
+      <v-btn depressed outlined to="/member/JoinStep2" class="btn-agree">동의하고 계속하기</v-btn>
     </div>
   </div>
 </template>

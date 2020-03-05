@@ -71,13 +71,13 @@
       <div class="login-menu">
         <v-btn
           class="btn-login-menu"
-          to="/login/JoinStep1"
+          to="/member/JoinStep1"
           depressed
           color="transparent"
         >스마트홈 앱이 처음이신가요?</v-btn>
         <v-btn
           class="btn-login-menu"
-          to="/login/findIdPass"
+          to="/member/findIdPass"
           depressed
           color="transparent"
         >아이디 또는 비밀번호 찾기</v-btn>

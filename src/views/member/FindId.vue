@@ -6,7 +6,7 @@
           <v-icon class="icon-history-back"></v-icon>
         </v-btn>
       </div>
-      <h1>세대 정보 입력</h1>
+      <h1>아이디 찾기</h1>
       <div class="common-page-top-btns right"></div>
     </div>
     <div class="common-page-content">
@@ -55,9 +55,21 @@
             </v-row>
           </div>
           <div class="common-page-form-btn">
-            <v-btn class="common" color="transparent" block depressed to="/login/JoinStep2">인증 받기</v-btn>
+            <v-btn
+              class="common"
+              color="transparent"
+              block
+              depressed
+              to="/member/FindIdResult"
+            >아이디 찾기</v-btn>
             <!-- 폼 작성 완료 시 -->
-            <v-btn class="common" color="pointColor1" block depressed to="/login/JoinStep2">인증 받기</v-btn>
+            <v-btn
+              class="common"
+              color="pointColor1"
+              block
+              depressed
+              to="/member/FindIdResult"
+            >아이디 찾기</v-btn>
             <!-- //폼 작성 완료 시 -->
           </div>
         </v-form>
@@ -67,8 +79,13 @@
 </template>
 <script>
 export default {
-  name: "joinStep1",
+  name: "findId",
   watch: {},
+  data() {
+    return {
+      dialog: false
+    };
+  },
   computed: {},
   mounted() {},
   methods: {},

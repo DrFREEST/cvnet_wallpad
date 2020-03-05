@@ -59,7 +59,7 @@
               <v-icon></v-icon>서비스 이용약관 동의
             </v-btn>
             <!-- 이용약관 동의 후 -->
-            <v-btn class="btn-form-agree complete" block depressed outlined to="/login/UseTerms">
+            <v-btn class="btn-form-agree complete" block depressed outlined to="/member/UseTerms">
               <v-icon></v-icon>서비스 이용약관 동의
             </v-btn>
             <!-- //이용약관 동의 후 -->
@@ -70,7 +70,7 @@
               color="transparent"
               block
               depressed
-              to="/login/CertificationFail"
+              to="/member/CertificationFail"
             >회원가입</v-btn>
             <!-- 폼 작성 완료 시 -->
             <v-btn
@@ -78,7 +78,7 @@
               color="pointColor1"
               block
               depressed
-              to="/login/CertificationSuccess"
+              to="/member/CertificationSuccess"
             >회원가입</v-btn>
             <!-- //폼 작성 완료 시 -->
           </div>
