@@ -14,6 +14,7 @@ import FindIdPass from '../views/member/FindIdPass.vue'//회원 - 아이디 또�
 import FindId from '../views/member/FindId.vue'//회원 - 아이디 찾기
 import FindIdResult from '../views/member/FindIdResult.vue'//회원 - 아이디 찾기 결과
 import FindPass from '../views/member/FindPass.vue'//회원 - 비밀번호 찾기
+import ChangePass from '../views/member/ChangePass.vue'//회원 - 비밀번호 변경
 
 Vue.use(Router);
 
@@ -21,7 +22,7 @@ const router = new Router({
   base: '/smarthome/v2',
   mode: 'history',
   routes: [
-    {
+    {//홈
       path: '/home',
       name: 'home',
       component: Home,
@@ -75,6 +76,10 @@ const router = new Router({
       path: '/member/findPass',
       name: 'findPass',
       component: FindPass,
+    }, {//회원 - 비밀번호 변경
+      path: '/member/changePass',
+      name: 'changePass',
+      component: ChangePass,
     }
   ]
 })

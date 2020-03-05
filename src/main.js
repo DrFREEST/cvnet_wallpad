@@ -13,6 +13,9 @@ import './assets/style/nanumsquare.css'
 import './assets/style/reset.min.css'
 import './assets/style/cvnet.scss'
 
+import VueAwesomeSwiper from "vue-awesome-swiper";
+Vue.use(VueAwesomeSwiper /* { default global options } */);
+
 Vue.prototype._ = _;
 Vue.prototype.moment = moment;
 

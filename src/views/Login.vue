@@ -2,7 +2,8 @@
   <div class="login-wrap">
     <div class="login-frame">
       <div class="login-logo">
-        <img src="https://dummyimage.com/235x235/fcfcfc/aaaaaa.png?text=Logo%20Img" alt />
+        <!-- <img src="https://dummyimage.com/235x235/fcfcfc/aaaaaa.png?text=Logo%20Img" alt /> -->
+        <img src="/src/assets/images/logo_raemian.svg" alt />
       </div>
       <div class="login-form">
         <!-- Start :: Login Form -->
