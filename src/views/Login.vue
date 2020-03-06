@@ -40,6 +40,7 @@
                   type="text"
                   color="pointColor1"
                   loader-height="1"
+                  value="werwerewre"
                 ></v-text-field>
               </v-col>
             </v-row>

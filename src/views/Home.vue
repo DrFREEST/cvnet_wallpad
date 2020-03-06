@@ -85,85 +85,99 @@
         <div class="main-menu-slide-wrapper">
           <swiper :options="swiperOption">
             <swiper-slide class="menu-group">
-              <v-btn>
-                <v-icon></v-icon>가스 차단기
+              <v-btn color="transparent" depressed to="/">
+                <v-img contain src="/src/assets/images/icon_gas_opened.png"></v-img>
+                <span>가스 차단기</span>
               </v-btn>
-              <v-btn>
-                <v-icon></v-icon>커튼
+              <v-btn color="transparent" depressed to="/">
+                <v-img
+                  contain
+                  src="https://dummyimage.com/235x235/fcfcfc/aaaaaa.png?text=Menu%20Icon"
+                ></v-img>
+                <span>커튼</span>
               </v-btn>
-              <v-btn>
-                <v-icon></v-icon>난방
+              <v-btn color="transparent" depressed to="/">
+                <v-img contain src="/src/assets/images/icon_heat_off.png"></v-img>
+                <span>난방</span>
               </v-btn>
-              <v-btn>
-                <v-icon></v-icon>일괄소등 스위치
+              <v-btn color="transparent" depressed to="/">
+                <v-img
+                  contain
+                  src="https://dummyimage.com/235x235/fcfcfc/aaaaaa.png?text=Menu%20Icon"
+                ></v-img>
+                <span>일괄소등 스위치</span>
               </v-btn>
-              <v-btn>
-                <v-icon></v-icon>대기전력
+              <v-btn color="transparent" depressed to="/">
+                <v-img contain src="/src/assets/images/icon_plug.png"></v-img>
+                <span>대기전력</span>
               </v-btn>
-              <v-btn>
-                <v-icon></v-icon>
+              <v-btn color="transparent" depressed to="/">
+                <v-img contain src="/src/assets/images/icon_administrative_expenses.png"></v-img>
                 <span>관리비</span>
               </v-btn>
-              <v-btn>
-                <v-icon></v-icon>
+              <v-btn color="transparent" depressed to="/">
+                <v-img contain src="/src/assets/images/icon_light_on.png"></v-img>
                 <span>조명</span>
               </v-btn>
-              <v-btn>
-                <v-icon></v-icon>
+              <v-btn color="transparent" depressed to="/">
+                <v-img contain src="/src/assets/images/icon_vent.png"></v-img>
                 <span>환기</span>
               </v-btn>
-              <v-btn>
-                <v-icon></v-icon>
+              <v-btn color="transparent" depressed to="/">
+                <v-img contain src="/src/assets/images/icon_visitor.png"></v-img>
                 <span>방문자 확인</span>
               </v-btn>
-              <v-btn>
-                <v-icon></v-icon>
+              <v-btn color="transparent" depressed to="/">
+                <v-img contain src="/src/assets/images/icon_air_conditioner.png"></v-img>
                 <span>에어컨</span>
               </v-btn>
-              <v-btn>
-                <v-icon></v-icon>
+              <v-btn color="transparent" depressed to="/">
+                <v-img contain src="/src/assets/images/icon_notice.png"></v-img>
                 <span>공지사항</span>
               </v-btn>
-              <v-btn>
-                <v-icon></v-icon>
+              <v-btn color="transparent" depressed to="/">
+                <v-img contain src="/src/assets/images/icon_call.png"></v-img>
                 <span>통화</span>
               </v-btn>
             </swiper-slide>
             <swiper-slide class="menu-group">
-              <v-btn>
-                <v-icon></v-icon>
+              <v-btn color="transparent" depressed to="/">
+                <v-img contain src="/src/assets/images/icon_elevator.png"></v-img>
                 <span>엘리베이터</span>
               </v-btn>
-              <v-btn>
-                <v-icon></v-icon>
+              <v-btn color="transparent" depressed to="/">
+                <v-img contain src="/src/assets/images/icon_access_record.png"></v-img>
                 <span>출입기록</span>
               </v-btn>
-              <v-btn>
-                <v-icon></v-icon>
-                <span>EMS</span>
+              <v-btn color="transparent" depressed to="/">
+                <v-img contain src="/src/assets/images/icon_car_charging.png"></v-img>
+                <span>전기차 충전</span>
               </v-btn>
-              <v-btn>
-                <v-icon></v-icon>
+              <v-btn color="transparent" depressed to="/">
+                <v-img contain src="/src/assets/images/icon_remote_meter_reading.png"></v-img>
                 <span>원격검침</span>
               </v-btn>
-              <v-btn>
-                <v-icon></v-icon>
+              <v-btn color="transparent" depressed to="/">
+                <v-img contain src="/src/assets/images/icon_parking_location.png"></v-img>
                 <span>주차위치</span>
               </v-btn>
-              <v-btn>
-                <v-icon></v-icon>
+              <v-btn color="transparent" depressed to="/">
+                <v-img contain src="/src/assets/images/icon_arrival_notice.png"></v-img>
                 <span>입차통보</span>
               </v-btn>
-              <v-btn>
-                <v-icon></v-icon>
+              <v-btn color="transparent" depressed to="/">
+                <v-img contain src="/src/assets/images/icon_emergency.png"></v-img>
                 <span>비상리스트</span>
               </v-btn>
-              <v-btn>
-                <v-icon></v-icon>
+              <v-btn color="transparent" depressed to="/">
+                <v-img contain src="/src/assets/images/icon_cctv.png"></v-img>
                 <span>CCVT</span>
               </v-btn>
-              <v-btn>
-                <v-icon></v-icon>
+              <v-btn color="transparent" depressed to="/">
+                <v-img
+                  contain
+                  src="https://dummyimage.com/235x235/fcfcfc/aaaaaa.png?text=Menu%20Icon"
+                ></v-img>
                 <span>택배</span>
               </v-btn>
             </swiper-slide>
@@ -173,7 +187,7 @@
       </v-container>
       <!-- //메뉴 슬라이드 -->
       <!-- 설정버튼 -->
-      <v-btn class="btn-setting" color="transparent" depressed title="설정">
+      <v-btn class="btn-setting" color="transparent" depressed title="환경설정" to="/configure">
         <v-img
           contain
           height="100%"

@@ -49,6 +49,7 @@ html {
 	position: fixed;
 	right: 20px;
 	bottom: 20px;
+	z-index: 999999;
 	.test-menu-btn {
 		border-radius: 30px;
 	}
@@ -126,7 +127,7 @@ input {
 	color: $color96;
 	&.v-label--active {
 		font-size: 1.0313rem;
-		margin-top: -0.5453rem;
+		margin-top: -0.2344rem;
 		color: $pointColor1;
 		& ~ input {
 			font-size: 1.2188rem;
@@ -289,22 +290,6 @@ input {
 						background: $bgModeSleep;
 					}
 				}
-				&--contained {
-				}
-				&__content {
-				}
-				.v-icon.notranslate.icon-outing.material-icons.theme--light {
-				}
-				.v-icon.notranslate.icon-occupancy.material-icons.theme--light {
-				}
-				.v-icon.notranslate.icon-sleep.material-icons.theme--light {
-				}
-				&:hover {
-				}
-				&:active {
-				}
-				&:focus {
-				}
 			}
 		}
 		.main-page-top-logo {
@@ -436,6 +421,7 @@ input {
 				flex-direction: column;
 				position: relative;
 				.swiper-pagination {
+					margin-bottom: 1.5625rem;
 					position: relative;
 					order: 0;
 					top: 0;
@@ -457,6 +443,7 @@ input {
 				}
 				.swiper-wrapper {
 					order: 1;
+					padding-bottom: 2.1875rem;
 				}
 				.swiper-pagination.swiper-pagination-bullets {
 				}
@@ -467,6 +454,47 @@ input {
 				.swiper-slide.swiper-slide-next {
 				}
 				.swiper-pagination-bullet.swiper-pagination-bullet-active {
+				}
+			}
+			.menu-group {
+				display: flex;
+				flex-wrap: wrap;
+				align-items: flex-start;
+
+				// justify-content: space-between;
+				.v-btn {
+					flex: 1 1 16.66666%;
+					max-width: calc(16.66666% - 1.875rem);
+					margin: 0 0.9375rem;
+					height: auto;
+					display: flex;
+					flex-direction: column;
+					position: relative;
+					padding: 0;
+					align-items: center;
+					border-radius: 0;
+					color: $colorF;
+					word-break: keep-all;
+					&__content {
+						flex-direction: column;
+						width: 1005;
+						span {
+							display: block;
+							white-space: normal;
+							text-align: center;
+							font-size: 1.375rem;
+						}
+					}
+					&::before,
+					.v-ripple__container {
+						display: none !important;
+					}
+					.v-image {
+						border-radius: 1.5625rem;
+						width: 6.875rem;
+						height: 6.875rem;
+						margin-bottom: 0.8509rem;
+					}
 				}
 			}
 		}

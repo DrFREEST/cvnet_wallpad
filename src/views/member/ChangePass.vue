@@ -48,23 +48,6 @@
           </div>
         </v-form>
       </div>
-
-      <!-- 알림팝업 -->
-      <v-dialog v-model="dialog" max-width="500">
-        <v-card>
-          <v-card-title>알림</v-card-title>
-          <v-card-text>
-            임시비밀번호가 발급되었습니다.
-            <br />
-            <br />
-            <strong>임시 비밀번호:</strong> ZHFKSK19
-          </v-card-text>
-          <v-card-actions>
-            <v-btn text @click="dialog = false" class="btn-confirm">확인</v-btn>
-          </v-card-actions>
-        </v-card>
-      </v-dialog>
-      <!-- //알림팝업 -->
     </div>
   </div>
 </template>
