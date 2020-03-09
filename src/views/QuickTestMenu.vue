@@ -51,7 +51,17 @@ export default {
         title: "환경설정 - 귀가 모드 설정",
         routingPage: "/configure/homeComming"
       },
-      { title: "환경설정 - 통화벨 설정", routingPage: "/configure/callMode" }
+      { title: "환경설정 - 통화벨 설정", routingPage: "/configure/callMode" },
+      { title: "제어 - 환기", routingPage: "/houseControl/ventilation" },
+      { title: "제어 - 난방", routingPage: "/houseControl/heating" },
+      { title: "제어 - 에어컨", routingPage: "/houseControl/airConditioner" },
+      { title: "제어 - 조명", routingPage: "/houseControl/light" },
+      { title: "제어 - 대기전력", routingPage: "/houseControl/standbyPower" },
+      { title: "제어 - 가스밸브", routingPage: "/houseControl/gasValve" },
+      { title: "제어 - 방범설정", routingPage: "/houseControl/security" },
+      { title: "제어 - 엘리베이터호출", routingPage: "/houseControl/elevator" },
+      { title: "제어 - 커튼", routingPage: "/houseControl/curtain" },
+      { title: "제어 - 일괄소등", routingPage: "/houseControl/allSwitchs" }
     ]
   })
 };

@@ -8,6 +8,7 @@ $color0: #000000;
 $color0_05: #0000000d;
 $color0_10: rgba(0, 0, 0, 0.1);
 $color32: #323232;
+$color43: #434343;
 $color60: #606060;
 $color64: #646464;
 $color70: #707070;
@@ -21,6 +22,8 @@ $colorF_25: rgba(255, 255, 255, 0.25);
 $colorModeHome: #0bc071;
 $colorModeGoOut: #f76c63;
 $bgModeSleep: transparent linear-gradient(180deg, #2d2d2d 0%, #4b4b4b 100%) 0% 0% no-repeat padding-box;
+$bgCommonPanel: transparent linear-gradient(0deg, rgba(210, 210, 210, 0.95) 0%, rgba(230, 230, 230, 0.95) 100%) 0% 0%
+	no-repeat padding-box;
 // 폰트 변수
 $fontFamilySet1: "NanumSquare", Arial, sans-serif;
 $fontFamilySet2: "Arial", sans-serif !important;
@@ -95,8 +98,8 @@ html {
 }
 // Form
 .v-input {
-	padding: 0;
 	margin: 0;
+	padding: 0;
 	.v-label {
 		font-weight: $fontWeightB;
 		display: none;
@@ -111,13 +114,13 @@ html {
 		opacity: 0;
 	}
 	&--switch__track {
+		top: calc(50% - (1.25rem / 2));
 		width: 100%;
 		height: 1.25rem;
-		border-radius: 0.9375rem;
-		top: calc(50% - (1.25rem / 2));
-		border: 1px solid $color70;
-		background-color: $colorF;
 		opacity: 1;
+		border: 1px solid $color70;
+		border-radius: 0.9375rem;
+		background-color: $colorF;
 		&.primary--text {
 			background-color: $successColor;
 		}
@@ -178,22 +181,22 @@ html {
 						position: relative;
 						width: 1.25rem;
 						height: 1.25rem;
+						transform: scale(1);
+						opacity: 1;
 						border-radius: 50%;
 						background-color: $successColor;
-						opacity: 1;
-						transform: scale(1);
 					}
 				}
 			}
 			& ~ .v-input--selection-controls__ripple {
-				background-color: $colorE8;
-				border-radius: 50%;
-				width: 1.875rem;
-				height: 1.875rem;
 				display: flex;
 				align-items: center;
 				justify-content: center;
+				width: 1.875rem;
+				height: 1.875rem;
 				opacity: 1;
+				border-radius: 50%;
+				background-color: $colorE8;
 			}
 		}
 		.v-icon.primary--text {
@@ -211,9 +214,9 @@ html {
 }
 .v-input--switch {
 	&--selection-controls {
+		width: 100%;
 		margin-top: 0;
 		padding-top: 0;
-		width: 100%;
 		.v-messages {
 			display: none;
 		}
@@ -223,9 +226,9 @@ html {
 			justify-content: space-between;
 			width: 100%;
 			.v-label {
+				font-size: 1.3125rem;
 				order: 0;
 				color: $color0;
-				font-size: 1.3125rem;
 			}
 			.v-input--selection-controls__input {
 				order: 1;
@@ -234,14 +237,14 @@ html {
 	}
 	.primary--text {
 		color: $pointColor1 !important;
-		caret-color: $pointColor1 !important;
 		border-color: $successColor;
+		caret-color: $pointColor1 !important;
 		// background-color: $pointColor1;
 	}
 	&__thumb {
+		top: calc(50% - (1.5625rem / 2));
 		width: 1.5625rem;
 		height: 1.5625rem;
-		top: calc(50% - (1.5625rem / 2));
 		border: 1px solid $color70;
 		background-color: $colorF;
 	}
@@ -1029,29 +1032,29 @@ input {
 						order: 1;
 						input[aria-checked="true"] {
 							& ~ .v-input--selection-controls__ripple {
-								background-color: $pointColor1;
 								display: flex;
 								align-items: center;
 								justify-content: center;
+								background-color: $pointColor1;
 								&::before {
 									position: relative;
 									width: 0.7813rem;
 									height: 0.4688rem;
-									border-left: 0.1875rem solid $colorF;
-									border-bottom: 0.1875rem solid $colorF;
-									opacity: 1;
-									border-radius: 0;
 									transform: scale(1) rotate(-45deg) translateY(-25%);
+									opacity: 1;
+									border-bottom: 0.1875rem solid $colorF;
+									border-left: 0.1875rem solid $colorF;
+									border-radius: 0;
 								}
 							}
 						}
 						.v-input--selection-controls__ripple {
-							opacity: 1;
-							min-width: 1.875rem;
 							width: 1.875rem;
+							min-width: 1.875rem;
 							height: 1.875rem;
-							background-color: $colorE8;
+							opacity: 1;
 							border-radius: 50%;
+							background-color: $colorE8;
 						}
 					}
 				}
@@ -1059,12 +1062,138 @@ input {
 			& ~ .list-note {
 				font-size: 1.0313rem;
 				margin-top: 2.0313rem;
-				color: $color96;
 				letter-spacing: -0.0309rem;
+				color: $color96;
 			}
 		}
 	}
 }
+// Common Panel
+.common-panel {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	padding-bottom: 1.4688rem;
+	.common-panel-top {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		height: 4.1563rem;
+		.common-panel-top-btns.left {
+			padding: 0 0.375rem;
+			.v-btn {
+				width: 4.125rem;
+				height: 4.125rem;
+			}
+			i.icon-history-back {
+				display: block;
+				width: 4.125rem;
+				height: 4.125rem;
+				&::after {
+					display: block;
+					width: 100%;
+					height: 100%;
+					transform: scale(1);
+					opacity: 1;
+					background: url(/src/assets/images/ic_back_white.svg) no-repeat center;
+					background-size: 50%;
+				}
+			}
+		}
+		h1 {
+			width: 11.6563rem;
+			.v-image {
+			}
+		}
+	}
+	.common-panel-body {
+		position: relative;
+		display: flex;
+		overflow-y: auto;
+		flex: 1 1 auto;
+		flex-direction: column;
+		margin: 2.1875rem 2.5rem 0;
+		border-radius: 1.5625rem;
+		background: $bgCommonPanel;
+		.common-panel-title {
+			border-bottom: 1px solid $colorD2;
+			h2 {
+				font-size: 1.5938rem;
+				font-weight: $fontWeightEB;
+				padding: 1.625rem;
+				text-align: center;
+			}
+		}
+		.common-panel-content {
+			display: flex;
+			overflow-y: auto;
+			align-items: center;
+			flex: 1 1 auto;
+			flex-direction: column;
+			justify-content: center;
+			.one-settings {
+				.one-setting-icon {
+					display: block;
+					width: 14.25rem;
+					height: 14.25rem;
+					margin: 0 auto;
+					border-radius: 2.5rem;
+					background: transparent linear-gradient(0deg, #e6e6e6 0%, #ffffff 100%) 0% 0% no-repeat padding-box;
+					box-shadow: 0.125rem 0.125rem 0.625rem rgba(129, 130, 127, 0.4);
+				}
+			}
+			.control-btns {
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				margin-top: 4.375rem;
+				.v-btn {
+					font-size: 1.2188rem;
+					width: 9.375rem;
+					height: 3.2813rem;
+					margin: 0 0.5469rem;
+					color: $colorF;
+					background-color: $color43;
+					&[data-active="true"] {
+						background-color: $successColor;
+					}
+				}
+			}
+			.control-note {
+				font-size: 1.0313rem;
+				margin-top: 2.5rem;
+				color: $color96;
+				text-align: center;
+			}
+		}
+		.v-btn {
+			display: block;
+			.v-btn__content {
+				max-width: 100%;
+				transform: scale(1);
+			}
+			&.btn-common-panel-close {
+				position: absolute !important;
+				top: 0.9375rem;
+				right: 0.9375rem;
+				width: 2.3438rem !important;
+				min-width: auto;
+				height: 2.3438rem !important;
+				max-height: none !important;
+				margin: 0;
+				padding: 0;
+				.v-image {
+					width: 100%;
+					height: 100%;
+					&__image {
+						background-size: 200%;
+					}
+				}
+			}
+		}
+	}
+}
+// Common Popup
 .v-overlay {
 	backdrop-filter: blur(0.9375rem);
 	-webkit-backdrop-filter: blur(0.9375rem);
