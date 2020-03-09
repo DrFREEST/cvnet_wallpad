@@ -41,7 +41,17 @@ export default {
         routingPage: "/member/findIdResult"
       },
       { title: "로그인 - 비밀번호 찾기", routingPage: "/member/findPass" },
-      { title: "로그인 - 비밀번호 변경", routingPage: "/member/changePass" }
+      { title: "로그인 - 비밀번호 변경", routingPage: "/member/changePass" },
+      { title: "환경설정 - 설정 목록", routingPage: "/configure/settingList" },
+      { title: "환경설정 - 계정 정보", routingPage: "/configure/accountInfo" },
+      { title: "환경설정 - 앱 정보", routingPage: "/configure/appInfo" },
+      { title: "환경설정 - 푸쉬 알림 설정", routingPage: "/configure/setPush" },
+      { title: "환경설정 - 언어 선택", routingPage: "/configure/selLanguage" },
+      {
+        title: "환경설정 - 귀가 모드 설정",
+        routingPage: "/configure/homeComming"
+      },
+      { title: "환경설정 - 통화벨 설정", routingPage: "/configure/callMode" }
     ]
   })
 };
