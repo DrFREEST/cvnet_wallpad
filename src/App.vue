@@ -4,7 +4,6 @@
     <QuickTestMenu></QuickTestMenu>
 
     <!-- End ::테스트용 퀵 메뉴 -->
-
     <router-view class="wrapper" />
   </v-app>
 </template>

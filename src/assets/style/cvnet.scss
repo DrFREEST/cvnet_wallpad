@@ -13,6 +13,8 @@ $color60: #606060;
 $color64: #646464;
 $color70: #707070;
 $color96: #969696;
+$colorB: #bbb;
+$colorC4: #c4c4c4;
 $colorC8: #c8c8c8;
 $colorD2: #d2d2d2;
 $colorE8: #e8e8e8;
@@ -24,6 +26,7 @@ $colorModeGoOut: #f76c63;
 $bgModeSleep: transparent linear-gradient(180deg, #2d2d2d 0%, #4b4b4b 100%) 0% 0% no-repeat padding-box;
 $bgCommonPanel: transparent linear-gradient(0deg, rgba(210, 210, 210, 0.95) 0%, rgba(230, 230, 230, 0.95) 100%) 0% 0%
 	no-repeat padding-box;
+$popOverayColor: #000000;
 // 폰트 변수
 $fontFamilySet1: "NanumSquare", Arial, sans-serif;
 $fontFamilySet2: "Arial", sans-serif !important;
@@ -93,7 +96,7 @@ html {
 		}
 	}
 	&.pointColor1 {
-		color: $colorF;
+		color: $colorF !important;
 	}
 }
 // Form
@@ -1123,6 +1126,19 @@ input {
 				padding: 1.625rem;
 				text-align: center;
 			}
+			.title-btns {
+				display: flex;
+				justify-content: center;
+				margin-bottom: 1.4063rem;
+				.v-btn {
+					margin: 0 0.7031rem;
+					background-color: $color43;
+					color: $colorF;
+					width: 11.375rem;
+					height: 3.3438rem;
+					font-size: 1.2813rem;
+				}
+			}
 		}
 		.common-panel-content {
 			display: flex;
@@ -1140,6 +1156,51 @@ input {
 					border-radius: 2.5rem;
 					background: transparent linear-gradient(0deg, #e6e6e6 0%, #ffffff 100%) 0% 0% no-repeat padding-box;
 					box-shadow: 0.125rem 0.125rem 0.625rem rgba(129, 130, 127, 0.4);
+				}
+			}
+			.multi-settings {
+				padding: 0;
+				&.v-list {
+					display: flex;
+					.v-list-item {
+						display: flex;
+						flex-direction: column;
+						&__title {
+							font-size: 1.4063rem;
+							font-weight: $fontWeightB;
+							margin-bottom: 1.1803rem;
+						}
+						.btn-toggle {
+							width: 9.4688rem;
+							height: 9.4688rem;
+							border-radius: 1.4063rem;
+							background: transparent linear-gradient(0deg, #e6e6e6 0%, #ffffff 100%) 0% 0% no-repeat padding-box;
+							padding: 0;
+							border: 1px solid $colorB;
+							& .v-ripple__container {
+								display: none;
+							}
+						}
+						.btn-detail {
+							height: 3.3438rem;
+							margin-top: 1.1875rem;
+							background-color: $color43;
+							color: #ffffff;
+							font-size: 1.2188rem;
+							padding: 0 1.0625rem;
+							& .v-btn__content {
+								text-align: left;
+								justify-content: space-between;
+								.v-icon {
+									width: 0.75rem;
+									height: 0.75rem;
+									border-bottom: 0.125rem solid $colorF;
+									border-right: 0.125rem solid $colorF;
+									transform: rotate(-45deg);
+								}
+							}
+						}
+					}
 				}
 			}
 			.control-btns {
@@ -1193,6 +1254,90 @@ input {
 		}
 	}
 }
+// security
+.security-control {
+	.v-list {
+		margin: 0 auto;
+		padding: 0;
+		display: inline-block;
+		.v-item-group {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex: 0 0 auto;
+			.v-list-item {
+				flex: 0 0 10.7188rem;
+				margin: 0 1.0938rem;
+				display: inline-flex;
+				flex-direction: column;
+				text-align: center;
+				align-items: center;
+				padding: 0;
+				border-radius: 2.5rem;
+				&__title {
+					font-size: 1.4063rem;
+					font-weight: $fontWeightB;
+				}
+				&__content {
+					padding: 0;
+					flex: 0 0 auto;
+				}
+				.v-icon {
+					min-width: auto;
+					flex: 0 0 auto;
+					margin: 0.9375rem auto 0;
+					width: 10.7188rem;
+					height: 13.375rem;
+					background-color: $colorC4;
+					border-radius: 2.5rem;
+					overflow: hidden;
+					&::after {
+						transform: scale(1);
+						opacity: 1;
+					}
+					&.icon_goout {
+						&::after {
+							background: url("/src/assets/images/ic_mode_goout_white.svg") no-repeat center;
+							background-size: 45%;
+						}
+					}
+					&.icon_home {
+						&::after {
+							background: url("/src/assets/images/ic_mode_home_white.svg") no-repeat center;
+							background-size: 45%;
+						}
+					}
+					&.icon_sleep {
+						&::after {
+							background: url("/src/assets/images/ic_mode_sleep_white.svg") no-repeat center;
+							background-size: 60%;
+						}
+					}
+				}
+				&.v-item--active {
+					.v-icon {
+						&.icon_goout {
+							background: $colorModeGoOut;
+						}
+						&.icon_home {
+							background: $colorModeHome;
+						}
+						&.icon_sleep {
+							background: $bgModeSleep;
+							&::after {
+								background: url("/src/assets/images/ic_mode_sleep.svg") no-repeat center;
+								background-size: 60%;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.control-note {
+		margin-top: 7.2325rem !important;
+	}
+}
 // Common Popup
 .v-overlay {
 	backdrop-filter: blur(0.9375rem);
@@ -1205,6 +1350,9 @@ input {
 .v-dialog {
 	border-radius: 1.875rem;
 	box-shadow: none;
+	&--fullscreen {
+		background-color: $colorF;
+	}
 	.v-card {
 		&__title {
 			font-size: 1.625rem !important;
@@ -1235,6 +1383,15 @@ input {
 					color: $successColor;
 				}
 			}
+		}
+	}
+	&.popup-detail {
+		background: transparent linear-gradient(0deg, rgba(210, 210, 210, 0.95) 0%, rgba(230, 230, 230, 0.95) 100%) 0% 0%
+			no-repeat padding-box;
+		border: 1px solid #969696;
+		border-radius: 50px;
+		.common-panel-body {
+			margin: 0;
 		}
 	}
 }

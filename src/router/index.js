@@ -37,6 +37,9 @@ import Elevator from '../views/houseControl/Elevator.vue'// 제어 - 엘리베�
 import Curtain from '../views/houseControl/Curtain.vue'// 제어 - 커튼
 import AllSwitchs from '../views/houseControl/AllSwitchs.vue'// 제어 - 일괄소등
 
+// 서비스 이용약관 컴포넌트화
+Vue.component('use-terms', UseTerms)
+
 Vue.use(Router);
 
 const router = new Router({
@@ -231,5 +234,28 @@ const router = new Router({
     }
   ]
 })
+
+
+//로그인 토큰 확인
+// router.beforeEach(function (to, from, next) {
+
+//   if (!to.matched.some(function (routeInfo) {
+//     return routeInfo.meta.authRequired;
+//   })) {
+//     // 이동할 페이지에 인증 정보가 필요하면 경고 창을 띄우고 페이지 전환은 하지 않음
+//     console.log("_token : " + _token);
+//     if (_token != null) {
+//       next()
+//     } else {
+//       console.log('Login Please!');
+//       next('/login')
+//     }
+//   } else {
+//     console.log("routing success : '" + to.path + "'");
+//     next(); // 페이지 전환
+//   };
+// })
+
+
 
 export default router

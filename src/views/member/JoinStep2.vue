@@ -55,7 +55,7 @@
                 <div class="form-hint">상단의 비밀번호 재입력</div>
               </v-col>
             </v-row>
-            <v-btn class="btn-form-agree" block depressed outlined>
+            <v-btn class="btn-form-agree" block depressed outlined @click="dialog=true">
               <v-icon></v-icon>서비스 이용약관 동의
             </v-btn>
             <!-- 이용약관 동의 후 -->
@@ -85,6 +85,12 @@
         </v-form>
       </div>
     </div>
+
+    <!-- 서비스 이용약관 팝업 -->
+    <v-dialog v-model="dialog" fullscreen color="white">
+      <use-terms></use-terms>
+    </v-dialog>
+    <!-- //서비스 이용약관 팝업 -->
   </div>
 </template>
 <script>
@@ -93,6 +99,11 @@ export default {
   watch: {},
   computed: {},
   mounted() {},
+  data() {
+    return {
+      dialog: false
+    };
+  },
   methods: {},
   components: {}
 };

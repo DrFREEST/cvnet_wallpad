@@ -45,7 +45,10 @@ export default {
   name: "allSwitchs",
   watch: {},
   data: () => ({
-    items: [{ title: "해제", value: 1, active: false }]
+    items: [
+      { title: "설정", value: 1, active: true }, //설정/해제 버튼 둘 중 하나만 보이도록 토글 연동 부탁드립니다.
+      { title: "해제", value: 1, active: false }
+    ]
   }),
   computed: {},
   mounted() {},
