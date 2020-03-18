@@ -2,7 +2,7 @@
   <div class="common-page">
     <div class="common-page-top">
       <div class="common-page-top-btns left">
-        <v-btn depressed title="뒤로가기" color="transparent">
+        <v-btn depressed title="뒤로가기" color="transparent" @click="back_page">
           <v-icon class="icon-history-back"></v-icon>
         </v-btn>
       </div>
@@ -13,13 +13,14 @@
       <div class="common-page-list">
         <v-list flat inactive>
           <v-list-item-group color="primary">
-            <v-list-item v-for="(item, index) in items" :key="index" @click>
+            <v-list-item v-for="(item, index) in items" :key="index">
               <v-list-item-content>
                 <v-switch
                   flat
                   :v-model="item.modelName"
                   :label="item.title"
                   :input-value="item.value"
+                  @change="on_write(item.modelName, item.value, index)"
                 ></v-switch>
               </v-list-item-content>
             </v-list-item>
@@ -29,21 +30,4 @@
     </div>
   </div>
 </template>
-<script>
-export default {
-  name: "setPush",
-  watch: {},
-  data: () => ({
-    // item: 1,
-    items: [
-      { title: "방범모드 변경 시", modelName: "switch1", value: true },
-      { title: "입차통보 시", modelName: "switch2", value: false },
-      { title: "신규 공지/택배 등록 시", modelName: "switch3", value: true }
-    ]
-  }),
-  computed: {},
-  mounted() {},
-  methods: {},
-  components: {}
-};
-</script>
+<script src="../../public/javascript/configure/setPush.js"></script>

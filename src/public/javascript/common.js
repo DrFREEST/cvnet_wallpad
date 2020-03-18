@@ -25,6 +25,12 @@ var _common = {};
 var _utils = {};
 
 
+
+
+
+
+
+
 //빈값체크
 _utils.empty = function (val) {
 	if (typeof val == "array") {
@@ -43,3 +49,4 @@ _utils.empty = function (val) {
 
 	return false;
 };
+

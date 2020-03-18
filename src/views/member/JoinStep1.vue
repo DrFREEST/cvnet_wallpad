@@ -2,7 +2,7 @@
   <div class="common-page">
     <div class="common-page-top">
       <div class="common-page-top-btns left">
-        <v-btn depressed title="뒤로가기" color="transparent">
+        <v-btn depressed title="뒤로가기" color="transparent" @click="back_page">
           <v-icon class="icon-history-back"></v-icon>
         </v-btn>
       </div>
@@ -22,6 +22,9 @@
                   label="동"
                   color="pointColor1"
                   loader-height="1"
+                  v-model="dong"
+                  ref="dong"
+                  @keyup="e_check_validation"
                 ></v-text-field>
               </v-col>
             </v-row>
@@ -34,6 +37,9 @@
                   type="text"
                   color="pointColor1"
                   loader-height="1"
+                  v-model="ho"
+                  ref="ho"
+                  @keyup="e_check_validation"
                 ></v-text-field>
               </v-col>
             </v-row>
@@ -46,6 +52,9 @@
                   placeholder="인증키를 입력해주세요."
                   color="pointColor1"
                   loader-height="1"
+                  v-model="house_key"
+                  ref="house_key"
+                  @keyup="e_check_validation"
                 ></v-text-field>
                 <div class="form-hint">
                   인증키는 월패드의
@@ -55,23 +64,11 @@
             </v-row>
           </div>
           <div class="common-page-form-btn">
-            <v-btn class="common" color="transparent" block depressed to="/member/JoinStep2">인증 받기</v-btn>
-            <!-- 폼 작성 완료 시 -->
-            <v-btn class="common" color="pointColor1" block depressed to="/member/JoinStep2">인증 받기</v-btn>
-            <!-- //폼 작성 완료 시 -->
+            <v-btn class="common" color="transparent" block depressed v-bind:class="{'pointColor1': is_ok}" @click="on_verify_housekey">인증 받기</v-btn>            
           </div>
         </v-form>
       </div>
     </div>
   </div>
 </template>
-<script>
-export default {
-  name: "joinStep1",
-  watch: {},
-  computed: {},
-  mounted() {},
-  methods: {},
-  components: {}
-};
-</script>
+<script src="../../public/javascript/member/joinStep1.js"></script>

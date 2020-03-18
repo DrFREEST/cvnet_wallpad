@@ -2,7 +2,7 @@
   <div class="common-page">
     <div class="common-page-top">
       <div class="common-page-top-btns left">
-        <v-btn depressed title="뒤로가기" color="transparent">
+        <v-btn depressed title="뒤로가기" color="transparent" @click="back_page">
           <v-icon class="icon-history-back"></v-icon>
         </v-btn>
       </div>
@@ -17,13 +17,4 @@
     </div>
   </div>
 </template>
-<script>
-export default {
-  name: "findIdPass",
-  watch: {},
-  computed: {},
-  mounted() {},
-  methods: {},
-  components: {}
-};
-</script>
+<script src="../../public/javascript/member/findIdPass.js"></script>

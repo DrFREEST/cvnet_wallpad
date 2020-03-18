@@ -11,17 +11,8 @@
     </div>
     <div class="common-page-bottom">
       <v-btn depressed outlined to="/login">기존 인증정보로 로그인하기</v-btn>
-      <v-btn depressed outlined to="/member/joinStep1">재인증 받기</v-btn>
+      <v-btn depressed outlined @click="on_remove_device_auth">재인증 받기</v-btn>
     </div>
   </div>
 </template>
-<script>
-export default {
-  name: "certificationFail",
-  watch: {},
-  computed: {},
-  mounted() {},
-  methods: {},
-  components: {}
-};
-</script>
+<script src="../../public/javascript/member/certificationFail.js"></script>

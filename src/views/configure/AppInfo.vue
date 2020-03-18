@@ -2,7 +2,7 @@
   <div class="common-page">
     <div class="common-page-top">
       <div class="common-page-top-btns left">
-        <v-btn depressed title="뒤로가기" color="transparent">
+        <v-btn depressed title="뒤로가기" color="transparent" @click="back_page">
           <v-icon class="icon-history-back"></v-icon>
         </v-btn>
       </div>
@@ -13,7 +13,7 @@
       <div class="common-page-list">
         <v-list>
           <v-list-item-group color="primary">
-            <v-list-item v-for="(item, index) in items" :key="index" @click>
+            <v-list-item v-for="(item, index) in items" :key="index">
               <v-list-item-content>
                 <v-list-item-title>
                   <router-link :to="item.routingPage">{{ item.title }}</router-link>
@@ -26,20 +26,4 @@
     </div>
   </div>
 </template>
-<script>
-export default {
-  name: "appInfo",
-  watch: {},
-  data: () => ({
-    // item: 1,
-    items: [
-      { title: "이용약관", routingPage: "/member/UseTerms" },
-      { title: "개인정보 취급방침", routingPage: "/member/UseTerms" }
-    ]
-  }),
-  computed: {},
-  mounted() {},
-  methods: {},
-  components: {}
-};
-</script>
+<script src="../../public/javascript/configure/appInfo.js"></script>

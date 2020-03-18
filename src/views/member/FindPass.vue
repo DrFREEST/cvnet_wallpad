@@ -2,7 +2,7 @@
   <div class="common-page">
     <div class="common-page-top">
       <div class="common-page-top-btns left">
-        <v-btn depressed title="뒤로가기" color="transparent">
+        <v-btn depressed title="뒤로가기" color="transparent" @click="back_page">
           <v-icon class="icon-history-back"></v-icon>
         </v-btn>
       </div>
@@ -22,6 +22,39 @@
                   label="아이디"
                   color="pointColor1"
                   loader-height="1"
+                  v-model="id"
+                  ref="id"
+                  @keyup="e_check_validation"
+                ></v-text-field>
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col>
+                <v-text-field
+                  class="input-form"
+                  placeholder="동을 입력해주세요."
+                  type="text"
+                  label="동"
+                  color="pointColor1"
+                  loader-height="1"
+                  v-model="dong"
+                  ref="dong"
+                  @keyup="e_check_validation"
+                ></v-text-field>
+              </v-col>
+            </v-row>
+            <v-row>
+              <v-col>
+                <v-text-field
+                  class="input-form"
+                  placeholder="호를 입력해주세요."
+                  label="호"
+                  type="text"
+                  color="pointColor1"
+                  loader-height="1"
+                  v-model="ho"
+                  ref="ho"
+                  @keyup="e_check_validation"
                 ></v-text-field>
               </v-col>
             </v-row>
@@ -34,6 +67,9 @@
                   placeholder="인증키를 입력해주세요."
                   color="pointColor1"
                   loader-height="1"
+                  v-model="house_key"
+                  ref="house_key"
+                  @keyup="e_check_validation"
                 ></v-text-field>
                 <div class="form-hint">
                   인증키는 월패드의
@@ -48,9 +84,11 @@
               color="transparent"
               block
               depressed
-              @click.stop="dialog = true"
+              @click="on_find_pwd"
+              v-bind:class="{'pointColor1': is_ok}"
             >임시 비밀번호 발급</v-btn>
             <!-- 폼 작성 완료 시 -->
+            <!--
             <v-btn
               class="common"
               color="pointColor1"
@@ -58,6 +96,7 @@
               depressed
               @click.stop="dialog = true"
             >임시 비밀번호 발급</v-btn>
+            -->
             <!-- //폼 작성 완료 시 -->
           </div>
         </v-form>
@@ -71,10 +110,10 @@
             임시비밀번호가 발급되었습니다.
             <br />
             <br />
-            <strong>임시 비밀번호:</strong> ZHFKSK19
+            <strong>임시 비밀번호:</strong> <span>{{temp_pwd}}</span>
           </v-card-text>
           <v-card-actions>
-            <v-btn text @click="dialog = false" class="btn-confirm">확인</v-btn>
+            <v-btn text @click="closePop" class="btn-confirm">확인</v-btn>
           </v-card-actions>
         </v-card>
       </v-dialog>
@@ -82,18 +121,4 @@
     </div>
   </div>
 </template>
-<script>
-export default {
-  name: "findPass",
-  watch: {},
-  data() {
-    return {
-      dialog: false
-    };
-  },
-  computed: {},
-  mounted() {},
-  methods: {},
-  components: {}
-};
-</script>
+<script src="../../public/javascript/member/findPass.js"></script>

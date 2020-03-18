@@ -2,7 +2,7 @@
   <div class="common-page">
     <div class="common-page-top">
       <div class="common-page-top-btns left">
-        <v-btn depressed title="뒤로가기" color="transparent">
+        <v-btn depressed title="뒤로가기" color="transparent" @click="back_page">
           <v-icon class="icon-history-back"></v-icon>
         </v-btn>
       </div>
@@ -12,10 +12,10 @@
     <div class="common-page-content">
       <div class="common-page-list">
         <v-list disabled>
-          <v-list-item-group v-model="item" color="primary">
-            <v-list-item v-for="(item, i) in items" :key="i">
+          <v-list-item-group color="primary">
+            <v-list-item v-for="(item, index) in items" :key="index">
               <v-list-item-content>
-                <v-list-item-title v-html="item.text"></v-list-item-title>
+                <v-list-item-title v-html="item.id"></v-list-item-title>
               </v-list-item-content>
             </v-list-item>
           </v-list-item-group>
@@ -28,22 +28,4 @@
     </div>
   </div>
 </template>
-<script>
-export default {
-  name: "findId",
-  watch: {},
-  data: () => ({
-    // item: 1,
-    items: [
-      { text: "CVNET" },
-      { text: "CVNET1234" },
-      { text: "WALLPAD" },
-      { text: "SmartHome1" }
-    ]
-  }),
-  computed: {},
-  mounted() {},
-  methods: {},
-  components: {}
-};
-</script>
+<script src="../../public/javascript/member/findIdResult.js"></script>

@@ -2,7 +2,7 @@
   <div class="common-page">
     <div class="common-page-top">
       <div class="common-page-top-btns left">
-        <v-btn depressed title="뒤로가기" color="transparent" @click="closePop">
+        <v-btn depressed title="뒤로가기" color="transparent" @click="back_page">
           <v-icon class="icon-history-back"></v-icon>
         </v-btn>
       </div>
@@ -19,22 +19,8 @@
       </div>
     </div>
     <div class="common-page-bottom">
-      <v-btn depressed outlined to="/member/JoinStep2" class="btn-agree" @click="closePop">동의하고 계속하기</v-btn>
+      <v-btn depressed outlined class="btn-agree" @click="go_join_step2">동의하고 계속하기</v-btn>
     </div>
   </div>
 </template>
-<script>
-export default {
-  name: "useTerms",
-  watch: {},
-  computed: {},
-  mounted() {},
-  methods: {
-    closePop: function() {
-      console.log(this.$parent.$parent.$parent.dialog);
-      this.$parent.$parent.$parent.dialog = false;
-    }
-  },
-  components: {}
-};
-</script>
+<script src="../../public/javascript/member/userTerms.js"></script>

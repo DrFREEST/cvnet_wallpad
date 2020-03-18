@@ -2,7 +2,7 @@
   <div class="common-page">
     <div class="common-page-top">
       <div class="common-page-top-btns left">
-        <v-btn depressed title="뒤로가기" color="transparent">
+        <v-btn depressed title="뒤로가기" color="transparent" @click="back_page">
           <v-icon class="icon-history-back"></v-icon>
         </v-btn>
       </div>
@@ -22,8 +22,11 @@
                   label="비밀번호"
                   color="pointColor1"
                   loader-height="1"
+                  v-model="pwd"
+                  ref="pwd"  
+                  @keyup="e_check_validation_pwd"
                 ></v-text-field>
-                <div class="form-hint">영어, 숫자, 특수문자를 혼합하여 8자리 이상</div>
+                <div class="form-hint">{{text_pwd}}</div>
               </v-col>
             </v-row>
             <v-row>
@@ -35,29 +38,20 @@
                   placeholder="비밀번호를 한번 더 입력해주세요."
                   color="pointColor1"
                   loader-height="1"
+                  v-model="check_pwd"
+                  ref="check_pwd"
+                  @keyup="e_check_pwd"
                 ></v-text-field>
-                <div class="form-hint">상단의 비밀번호 재입력</div>
+                <div class="form-hint">{{text_check_pwd}}</div>
               </v-col>
             </v-row>
           </div>
           <div class="common-page-form-btn">
-            <v-btn class="common" color="transparent" block depressed to="/">적용</v-btn>
-            <!-- 폼 작성 완료 시 -->
-            <v-btn class="common" color="pointColor1" block depressed to="/">적용</v-btn>
-            <!-- //폼 작성 완료 시 -->
+            <v-btn class="common" color="transparent" block depressed v-bind:class="{'pointColor1': check_ok}" @click="on_change_pwd">적용</v-btn>            
           </div>
         </v-form>
       </div>
     </div>
   </div>
 </template>
-<script>
-export default {
-  name: "changePass",
-  watch: {},
-  computed: {},
-  mounted() {},
-  methods: {},
-  components: {}
-};
-</script>
+<script src="../../public/javascript/member/changePass.js"></script>

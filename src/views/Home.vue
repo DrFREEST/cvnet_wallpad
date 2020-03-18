@@ -90,10 +90,7 @@
                 <span>가스 차단기</span>
               </v-btn>
               <v-btn color="transparent" depressed to="/">
-                <v-img
-                  contain
-                  src="https://dummyimage.com/235x235/fcfcfc/aaaaaa.png?text=Menu%20Icon"
-                ></v-img>
+                <v-img contain src="/src/assets/images/icon_curtain.png"></v-img>
                 <span>커튼</span>
               </v-btn>
               <v-btn color="transparent" depressed to="/">
@@ -101,10 +98,7 @@
                 <span>난방</span>
               </v-btn>
               <v-btn color="transparent" depressed to="/">
-                <v-img
-                  contain
-                  src="https://dummyimage.com/235x235/fcfcfc/aaaaaa.png?text=Menu%20Icon"
-                ></v-img>
+                <v-img contain src="/src/assets/images/icon_all_on.png"></v-img>
                 <span>일괄소등 스위치</span>
               </v-btn>
               <v-btn color="transparent" depressed to="/">
@@ -174,10 +168,7 @@
                 <span>CCVT</span>
               </v-btn>
               <v-btn color="transparent" depressed to="/">
-                <v-img
-                  contain
-                  src="https://dummyimage.com/235x235/fcfcfc/aaaaaa.png?text=Menu%20Icon"
-                ></v-img>
+                <v-img contain src="/src/assets/images/icon_delivery.png"></v-img>
                 <span>택배</span>
               </v-btn>
             </swiper-slide>

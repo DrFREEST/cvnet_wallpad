@@ -13,20 +13,14 @@
       <div class="common-page-list">
         <v-radio-group v-model="radios" :mandatory="false">
           <v-list inactive>
-            <v-list-item-group color="primary">
-              <v-list-item v-for="(item, index) in items" :key="index" @click>
-                <v-list-item-content>
-                  <v-radio
-                    flat
-                    :checked="item.value"
-                    :name="item.radioGroupName"
-                    :v-model="item.modelName"
-                    :label="item.title"
-                    :input-value="item.value"
-                  ></v-radio>
-                </v-list-item-content>
-              </v-list-item>
-            </v-list-item-group>
+            <v-radio-group v-model="radioGroup">
+              <v-radio
+                v-for="(item,index) in items"
+                :key="index"
+                :label="item.title"
+                :value="index"
+              ></v-radio>
+            </v-radio-group>
           </v-list>
         </v-radio-group>
         <!-- <v-radio-group v-model="radios">
@@ -46,7 +40,7 @@ export default {
   name: "callMode",
   watch: {},
   data: () => ({
-    // item: 1,
+    radioGroup: 1,
     items: [
       {
         title: "통화벨로 알림",

@@ -2,7 +2,7 @@
   <div class="common-page">
     <div class="common-page-top">
       <div class="common-page-top-btns left">
-        <v-btn depressed title="뒤로가기" color="transparent">
+        <v-btn depressed title="뒤로가기" color="transparent" @click="back_page">
           <v-icon class="icon-history-back"></v-icon>
         </v-btn>
       </div>
@@ -22,6 +22,9 @@
                   label="동"
                   color="pointColor1"
                   loader-height="1"
+                  v-model="dong"
+                  ref="dong"
+                  @keyup="e_check_validation"
                 ></v-text-field>
               </v-col>
             </v-row>
@@ -34,6 +37,9 @@
                   type="text"
                   color="pointColor1"
                   loader-height="1"
+                  v-model="ho"
+                  ref="ho"
+                  @keyup="e_check_validation"
                 ></v-text-field>
               </v-col>
             </v-row>
@@ -46,6 +52,9 @@
                   placeholder="인증키를 입력해주세요."
                   color="pointColor1"
                   loader-height="1"
+                  v-model="house_key"
+                  ref="house_key"
+                  @keyup="e_check_validation"
                 ></v-text-field>
                 <div class="form-hint">
                   인증키는 월패드의
@@ -60,9 +69,11 @@
               color="transparent"
               block
               depressed
-              to="/member/FindIdResult"
+              @click="on_find_user"
+              v-bind:class="{'pointColor1': is_ok}"
             >아이디 찾기</v-btn>
             <!-- 폼 작성 완료 시 -->
+            <!--
             <v-btn
               class="common"
               color="pointColor1"
@@ -70,6 +81,7 @@
               depressed
               to="/member/FindIdResult"
             >아이디 찾기</v-btn>
+            -->
             <!-- //폼 작성 완료 시 -->
           </div>
         </v-form>
@@ -77,18 +89,4 @@
     </div>
   </div>
 </template>
-<script>
-export default {
-  name: "findId",
-  watch: {},
-  data() {
-    return {
-      dialog: false
-    };
-  },
-  computed: {},
-  mounted() {},
-  methods: {},
-  components: {}
-};
-</script>
+<script src="../../public/javascript/member/findId.js"></script>
